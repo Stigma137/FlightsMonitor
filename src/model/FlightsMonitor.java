@@ -83,4 +83,50 @@ public class FlightsMonitor {
 		}
 		return flights;
 	}
+	public Flight search(String criteria, String toFind) {
+		Flight found = null;
+		if(sorted == SORTED_BY_AIRLINE && criteria.equals("airsearch")) {
+			int start = 0;
+			int end = flights.size() - 1;
+			while(start <= end && found == null) {
+				int medio = (end + start)/2;
+				if (flights.get(medio).getAirLine().equals(toFind)) {
+					found = flights.get(medio);	
+				}
+				else if (0 == 0) {
+					
+				}
+			}
+		}
+		if(sorted == 0 && criteria.equals("airsearch")) {
+			for (int i = 0; i < flights.size(); i++) {
+				if(flights.get(i).getAirLine().equalsIgnoreCase(toFind) && found == null) {
+					found = flights.get(i);
+				}
+			}
+		}
+		if (sorted == SORTED_BY_BOARDING_GATE && criteria.equals("boardsearch")) {
+			int start = 0;
+			int end = flights.size() - 1;
+			while(start <= end && found == null) {
+				int mid = (end + start)/2;
+				if (flights.get(mid).getBoardingGate() == Integer.parseInt(toFind)) {
+					found = flights.get(mid);	
+				}
+				else if (flights.get(mid).getBoardingGate() > Integer.parseInt(toFind)) {
+					end = mid-1;
+				} else {
+					start = mid+1;
+				}
+			}
+		}
+		if(criteria.equals("boardsearch")) {
+			for (int i = 0; i < flights.size(); i++) {
+				if(flights.get(i).getBoardingGate() == Integer.parseInt(toFind) && found == null) {
+					found = flights.get(i);
+				}
+			}
+		}
+		return found;
+	}
 }	

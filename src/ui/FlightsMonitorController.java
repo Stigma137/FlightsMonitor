@@ -14,6 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Flight;
 import model.FlightsMonitor;
@@ -65,6 +66,11 @@ public class FlightsMonitorController implements Initializable{
     private TableColumn<Flight, Integer> flightT;
     @FXML
     private TableColumn<Flight, String> timeT;
+    @FXML
+    private ToggleGroup  sortGroup;
+    @FXML
+    private ToggleGroup  searchGroup;
+    
     private FlightsMonitor fm;
     private ObservableList<Flight> flights;
     @FXML
@@ -73,12 +79,33 @@ public class FlightsMonitorController implements Initializable{
     }
     @FXML
     void searchBy(ActionEvent event) {
-
+    	String option = (String) (searchGroup.getSelectedToggle().getUserData());
+    	switch(option) {
+    	case "airsearch":
+    		fm.search("airsearch", searchText.getText());
+    		break;
+    	case "boardsearch":System.out.println("sadasdasdasds");
+    		System.out.println(fm.search("boardsearch", searchText.getText()).toString());
+    		break;
+    	case "datesearch":
+    		fm.search("datesearch", searchText.getText());
+    		break;
+    	case "destinationsearch":
+    		fm.search("destinationsearch", searchText.getText());
+    		break;
+    	case "flightsearch":
+    		fm.search("flightsearch", searchText.getText());
+    		break;
+    	case "timesearch":
+    		fm.search("timesearch", searchText.getText());
+    		break;
+    		
+    	}
     }
 
     @FXML
     void sortBy(ActionEvent event) {
-
+    	
     }
 
 	@Override
@@ -91,6 +118,13 @@ public class FlightsMonitorController implements Initializable{
 		desT.setCellValueFactory(new PropertyValueFactory<Flight, String>("destination"));
 		flightT.setCellValueFactory(new PropertyValueFactory<Flight, Integer>("flightNumber"));
 		timeT.setCellValueFactory(new PropertyValueFactory<Flight, String>("time"));
+		
+		airLineSearch.setUserData("airsearch");
+		boardSearch.setUserData("boardsearch");
+		dateSearch.setUserData("datesearch");
+		desSearch.setUserData("destinationsearch");
+		flightSearch.setUserData("flightsearch");
+		timeSearch.setUserData("timesearch");
 	}
 
 }

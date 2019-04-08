@@ -7,10 +7,11 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.FlightsMonitorController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.FlightsMonitorController">
    <children>
       <Button layoutX="752.0" layoutY="235.0" mnemonicParsing="false" onAction="#sortBy" text="Sort" />
       <Button layoutX="820.0" layoutY="509.0" mnemonicParsing="false" onAction="#searchBy" text="Search" />
@@ -21,12 +22,15 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <RadioButton fx:id="airLineSort" layoutX="9.0" layoutY="6.0" mnemonicParsing="false" text="Airline" />
-                  <RadioButton fx:id="boardSort" layoutX="9.0" layoutY="33.0" mnemonicParsing="false" text="Boarding Gate" />
-                  <RadioButton fx:id="dateSort" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" text="Date" />
-                  <RadioButton fx:id="desSort" layoutX="9.0" layoutY="90.0" mnemonicParsing="false" text="Destination" />
-                  <RadioButton fx:id="flightSort" layoutX="9.0" layoutY="120.0" mnemonicParsing="false" text="Flight Number" />
-                  <RadioButton fx:id="timeSort" layoutX="9.0" layoutY="149.0" mnemonicParsing="false" text="Time" />
+                  <RadioButton fx:id="airLineSort" layoutX="9.0" layoutY="6.0" mnemonicParsing="false" text="Airline">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sortGroup" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="boardSort" layoutX="9.0" layoutY="33.0" mnemonicParsing="false" text="Boarding Gate" toggleGroup="$sortGroup" />
+                  <RadioButton fx:id="dateSort" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" text="Date" toggleGroup="$sortGroup" />
+                  <RadioButton fx:id="desSort" layoutX="9.0" layoutY="90.0" mnemonicParsing="false" text="Destination" toggleGroup="$sortGroup" />
+                  <RadioButton fx:id="flightSort" layoutX="9.0" layoutY="120.0" mnemonicParsing="false" text="Flight Number" toggleGroup="$sortGroup" />
+                  <RadioButton fx:id="timeSort" layoutX="9.0" layoutY="149.0" mnemonicParsing="false" text="Time" toggleGroup="$sortGroup" />
                </children>
             </AnchorPane>
         </content>
@@ -36,12 +40,15 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <RadioButton fx:id="airLineSearch" layoutX="5.0" layoutY="6.0" mnemonicParsing="false" text="Airline" />
-                  <RadioButton fx:id="boardSearch" layoutX="5.0" layoutY="33.0" mnemonicParsing="false" text="Boarding Gate" />
-                  <RadioButton fx:id="dateSearch" layoutX="5.0" layoutY="62.0" mnemonicParsing="false" text="Date" />
-                  <RadioButton fx:id="desSearch" layoutX="5.0" layoutY="90.0" mnemonicParsing="false" text="Destination" />
-                  <RadioButton fx:id="flightSearch" layoutX="5.0" layoutY="119.0" mnemonicParsing="false" text="Flight Number" />
-                  <RadioButton fx:id="timeSearch" layoutX="5.0" layoutY="149.0" mnemonicParsing="false" text="Time" />
+                  <RadioButton fx:id="airLineSearch" layoutX="5.0" layoutY="6.0" mnemonicParsing="false" text="Airline">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="searchGroup" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="boardSearch" layoutX="5.0" layoutY="33.0" mnemonicParsing="false" text="Boarding Gate" toggleGroup="$searchGroup" />
+                  <RadioButton fx:id="dateSearch" layoutX="5.0" layoutY="62.0" mnemonicParsing="false" text="Date" toggleGroup="$searchGroup" />
+                  <RadioButton fx:id="desSearch" layoutX="5.0" layoutY="90.0" mnemonicParsing="false" text="Destination" toggleGroup="$searchGroup" />
+                  <RadioButton fx:id="flightSearch" layoutX="5.0" layoutY="119.0" mnemonicParsing="false" text="Flight Number" toggleGroup="$searchGroup" />
+                  <RadioButton fx:id="timeSearch" layoutX="5.0" layoutY="149.0" mnemonicParsing="false" text="Time" toggleGroup="$searchGroup" />
                </children>
             </AnchorPane>
         </content>
