@@ -17,6 +17,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+<<<<<<< HEAD
+=======
+import javafx.scene.control.TitledPane;
+>>>>>>> ca19ff6541e01f08e7f9d4c34daccf799ff71788
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
@@ -99,6 +103,7 @@ public class FlightsMonitorController implements Initializable{
     @FXML
     void searchBy(ActionEvent event) {
     	String option = (String) (searchGroup.getSelectedToggle().getUserData());
+<<<<<<< HEAD
     	Pane root = new Pane();
 		Label result = new Label();
 		result.relocate(5, 25);
@@ -127,6 +132,26 @@ public class FlightsMonitorController implements Initializable{
     		break;
     	case "timesearch":
     		result.setText(fm.search("timesearch", searchText.getText()).toString());
+=======
+    	switch(option) {
+    	case "airsearch":
+    		fm.search("airsearch", searchText.getText());
+    		break;
+    	case "boardsearch":System.out.println("sadasdasdasds");
+    		System.out.println(fm.search("boardsearch", searchText.getText()).toString());
+    		break;
+    	case "datesearch":
+    		fm.search("datesearch", searchText.getText());
+    		break;
+    	case "destinationsearch":
+    		fm.search("destinationsearch", searchText.getText());
+    		break;
+    	case "flightsearch":
+    		fm.search("flightsearch", searchText.getText());
+    		break;
+    	case "timesearch":
+    		fm.search("timesearch", searchText.getText());
+>>>>>>> ca19ff6541e01f08e7f9d4c34daccf799ff71788
     		break;
     		
     	}
@@ -136,6 +161,7 @@ public class FlightsMonitorController implements Initializable{
      */
     @FXML
     void sortBy(ActionEvent event) {
+<<<<<<< HEAD
     	String option = (String) sortGroup.getSelectedToggle().getUserData();
     	fm.sort(option);
     	switch(option) {
@@ -169,6 +195,9 @@ public class FlightsMonitorController implements Initializable{
     		break;
     		
     	}
+=======
+    	
+>>>>>>> ca19ff6541e01f08e7f9d4c34daccf799ff71788
     }
     /* Method that allows to switch the page back.
      * @param an ActionEvent that represents the back button.
@@ -225,6 +254,7 @@ public class FlightsMonitorController implements Initializable{
 		desSearch.setUserData("destinationsearch");
 		flightSearch.setUserData("flightsearch");
 		timeSearch.setUserData("timesearch");
+<<<<<<< HEAD
 		
 		airLineSort.setUserData("airlinesort");
 		boardSort.setUserData("boardsort");
@@ -233,6 +263,8 @@ public class FlightsMonitorController implements Initializable{
 		desSort.setUserData("dessort");
 		flightSort.setUserData("flightsort");
 		timeSort.setUserData("timesort");
+=======
+>>>>>>> ca19ff6541e01f08e7f9d4c34daccf799ff71788
 	}
 
 }

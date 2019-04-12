@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.FlightsMonitorController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.FlightsMonitorController">
    <children>
       <Button layoutX="752.0" layoutY="250.0" mnemonicParsing="false" onAction="#sortBy" text="Sort" />
       <Button layoutX="820.0" layoutY="509.0" mnemonicParsing="false" onAction="#searchBy" text="Search" />
@@ -31,7 +31,10 @@
                   <RadioButton fx:id="desSort" layoutX="9.0" layoutY="90.0" mnemonicParsing="false" text="Destination" toggleGroup="$sortGroup" />
                   <RadioButton fx:id="flightSort" layoutX="9.0" layoutY="120.0" mnemonicParsing="false" text="Flight Number" toggleGroup="$sortGroup" />
                   <RadioButton fx:id="timeSort" layoutX="9.0" layoutY="149.0" mnemonicParsing="false" text="Time" toggleGroup="$sortGroup" />
+<<<<<<< HEAD
                   <RadioButton fx:id="datetimeSort" layoutX="9.0" layoutY="175.0" mnemonicParsing="false" text="Date and Time" toggleGroup="$sortGroup" />
+=======
+>>>>>>> ca19ff6541e01f08e7f9d4c34daccf799ff71788
                </children>
             </AnchorPane>
         </content>

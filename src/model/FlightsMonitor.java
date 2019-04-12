@@ -89,6 +89,7 @@ public class FlightsMonitor {
 		}
 		return flights;
 	}
+<<<<<<< HEAD
 	/* Method that allows to obtain an integer that represent the list state.
 	 * @return an integer that represent the list state.
 	 */
@@ -154,6 +155,8 @@ public class FlightsMonitor {
 	 * @param a String that represents the word to find in the list.
 	 * @return a Flight object.
 	 */
+=======
+>>>>>>> ca19ff6541e01f08e7f9d4c34daccf799ff71788
 	public Flight search(String criteria, String toFind) {
 		Flight found = null;
 		if(sorted == SORTED_BY_AIRLINE && criteria.equals("airsearch")) {
@@ -161,6 +164,7 @@ public class FlightsMonitor {
 			int end = flights.size() - 1;
 			while(start <= end && found == null) {
 				int medio = (end + start)/2;
+<<<<<<< HEAD
 				if (flights.get(medio).getAirLine().compareTo(toFind) == 0) {
 					found = flights.get(medio);	
 				}
@@ -168,6 +172,13 @@ public class FlightsMonitor {
 					end = medio - 1;
 				}else {
 					start = medio - 1;
+=======
+				if (flights.get(medio).getAirLine().equals(toFind)) {
+					found = flights.get(medio);	
+				}
+				else if (0 == 0) {
+					
+>>>>>>> ca19ff6541e01f08e7f9d4c34daccf799ff71788
 				}
 			}
 		}
@@ -193,13 +204,18 @@ public class FlightsMonitor {
 				}
 			}
 		}
+<<<<<<< HEAD
 		if(sorted == 0 && criteria.equals("boardsearch")) {
+=======
+		if(criteria.equals("boardsearch")) {
+>>>>>>> ca19ff6541e01f08e7f9d4c34daccf799ff71788
 			for (int i = 0; i < flights.size(); i++) {
 				if(flights.get(i).getBoardingGate() == Integer.parseInt(toFind) && found == null) {
 					found = flights.get(i);
 				}
 			}
 		}
+<<<<<<< HEAD
 		if (sorted == SORTED_BY_DATE && criteria.equals("datesearch")) {
 			int start = 0;
 			int end = flights.size() - 1;
@@ -288,6 +304,8 @@ public class FlightsMonitor {
 				}
 			}
 		}
+=======
+>>>>>>> ca19ff6541e01f08e7f9d4c34daccf799ff71788
 		return found;
 	}
 }	
